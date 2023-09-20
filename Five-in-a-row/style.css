@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: beige;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    width: fit-content;
+}
+
+.square {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    text-align: center;
+    font-size: 32px;
+}
