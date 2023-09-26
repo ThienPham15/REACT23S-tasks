@@ -26,7 +26,6 @@ class Pizza {
                 this.toppings.splice(i, 1);
             }
         }
-        this.toppings.pop(topping);
     }
 
     getPrice() {
@@ -52,7 +51,7 @@ pizza2.textContent = `Pizza ${pizza_2.getName()} has toppings ${pizza_2.getToppi
 pizza_1.addTopping('rucola');
 console.log(pizza_1.getTopping().join(','));
 
-pizza_1.removeTopping('pepperoni');
+pizza_1.removeTopping('tomato');
 console.log(pizza_1.getTopping().join(', '));
 
 
