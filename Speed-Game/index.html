@@ -3,23 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Montserrat&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <title>Speedgame - Thien</title>
 </head>
 <body>
-    <h1>Speedgame</h1>
-    <p>Score = <span id="score">0</span></p>
-    <div class="circles">
-        <div class="circle">0</div>
-        <div class="circle">1</div>
-        <div class="circle">2</div>
-        <div class="circle">3</div>
+    <h1>GET YOUR APPLE</h1>
+
+    <div id="infoButton" >
+        <span class="material-symbols-outlined">help</span>
     </div>
-    <div class="buttons">    
-        <div><button id="startButton">Start</button></div>
-        <div><button id="endButton">End</button></div>
+    
+    <div class="display">
+        <div><p class="score">APPLE: <span id="score">0</span></p></div>
+        <div class="buttons">
+            <div><button id="startButton">Start</button></div>
+            <div><button id="endButton">End</button></div>
+        </div>
     </div>
 
+    <div class="circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <div class="overlay">
+        <div class="ending-box">
+            <button type="button" id="close-btn1">Close</button>
+            <h3>Oops!</h3>
+            <p>You got <span id="finalScore"></span></p>
+            <p>Try to catch more next time</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <button type="button" id="close-btn2">Close</button>
+        <p>Catch apple shown on the screen</p>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
+
+
+
+<!-- IDEA -->
+<!-- Follow the puppy -->

@@ -6,48 +6,191 @@
 
 body {
     background-color: rgb(135, 183, 135);
+    background-image: url('https://cdn.pixabay.com/photo/2012/04/13/12/43/country-32248_1280.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: monospace;
     text-align: center;
     color: #28231d; 
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    cursor: pointer;
 }
 
 h1 {
     font-size: 4rem;
-    font-style: italic;
+    font-family: 'Bagel Fat One';
+    margin-top: 2rem;
+    color: #c53307;
 }
 
 .circles {
+    width: 50vw;
+    margin-left: 25vw;
+    background-color: hwb(0 50% 50% / 0.25);
+    border-radius: 25px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .circle {
-    width: 90px;
-    height: 90px;
+    width: 13vw;
+    height: 13vw;
     border-radius: 50%;
     font-size: 1.5rem;
-    background-color: #f2f2f2;
+    background-color: hwb(0 50% 50% / 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 2rem;
+    margin: 1rem;
     pointer-events: none;
 }
 
 .circle.active {
     background-color: goldenrod;
-    background-image: url('https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/activities-fun/10-great-small-dog-breeds/maltese-portrait.jpg');
-    background-size: cover;
+/*     background-image: url('https://cdn.pixabay.com/photo/2016/10/30/18/01/apple-1783882_1280.png'); */
+    background-image: url('https://illustoon.com/photo/7156.png');
+    background-size: contain;
 }
 
-/*Style buttons*/
+/* Info button */
+#infoButton {
+    width: 50vw;
+    margin-left: 25vw;
+    display: flex;
+    justify-content: flex-end;
+}
 
-/* #startButton {
-    visibility: visible;
+#infoButton span {
+    font-size: 2.5rem;
+    color: #333;
+    margin-right: 2rem;
+}
+
+/* Buttons */
+.display {
+    display: flex;
+    width: 50vw;
+    margin-left: 25vw;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.display button {
+    font-family: inherit;
+    font-size: 1.5rem;
+    height: 2rem;
+    padding: 0.15rem 1rem;
+    border-radius: 6px;
+}
+
+.score {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: rgb(255, 115, 0);
+}
+
+#startButton {
+    display: block;
+    background-color: rgb(106, 255, 47);
+}
+
+#startButton:hover {
+    background-color: rgba(106, 255, 47, 0.8);
 }
 
 #endButton {
-    visibility: hidden;
-}  */
+    display: none;
+    background-color: red;
+}  
+
+#endButton:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+/* Modal ending-box */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(48, 65, 39, 0.8);
+    display: none;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.ending-box {
+    position: fixed;
+    top: 20vw;
+    left: 30vw;
+    width: 40vw;
+    height: 20vh;
+    background-color: rgb(242, 234, 161);
+    border: dashed 0.15rem #333;
+    border-radius: 6px;
+    padding: 2rem;
+    row-gap: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.ending-box button {
+    background-color: red;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.25rem;
+}
+
+.ending-box button:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+/* Modal Info-box */
+.info-box {
+    background-color: #fff;
+    border: dashed 0.5rem #000;
+    position: fixed;
+    top: 20vw;
+    left: 30vw;
+    width: 40vw;
+    height: 20vh;
+    border-radius: 12px;
+    display: none;
+    padding: 1rem 2rem;
+}
+
+.info-box.show {
+    display: block;
+}
+
+.info-box p {
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+.info-box button {
+    background-color: red;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.25rem;
+}
+
+.info-box button:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+

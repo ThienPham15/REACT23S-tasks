@@ -2,6 +2,12 @@ const scoreDisplay = document.querySelector('#score');
 const circles = document.querySelectorAll('.circle'); 
 const startButton = document.querySelector('#startButton');
 const endButton = document.querySelector('#endButton');
+const overlay = document.querySelector('.overlay');
+const overlayBtn = document.querySelector('#close-btn1');
+const finalScore = document.querySelector('#finalScore');
+const infoButton = document.querySelector('#infoButton');
+const infoBox = document.querySelector('.info-box');
+const infoCloseBtn = document.querySelector('#close-btn2'); 
 
 let score = 0;
 let timer; 
@@ -41,8 +47,9 @@ function enableEvents() {
 }
 
 function startGame() {
-    startButton.style.visibility = 'hidden';
-    endButton.style.visibility = 'visible';
+
+    startButton.style.display = 'none';
+    endButton.style.display = 'block';
 
     if (round >= 3) {
         return endGame()
@@ -51,7 +58,7 @@ function startGame() {
     /*A function make a circle ranndomly active
         if it is the same circle, then the function will run again until it is different activeCircle*/
         function pickNewCircle(activeCircle) {
-            const newActiveCircle = getRandomInt(0,3);
+            const newActiveCircle = getRandomInt(0,5);
             if (newActiveCircle !== activeCircle) {
                 return newActiveCircle; 
             }
@@ -70,18 +77,39 @@ function startGame() {
     timer = setTimeout(startGame, pace)
     pace -= 10; 
     round += 1; 
+}
 
+function showOverlay() {
+    overlay.classList.add('show');
+    finalScore.textContent = score;
+}
+
+function closeOverlay() {
+    overlay.classList.remove('show')
+    resetGame();
 }
 
 function endGame() {
-    window.alert('Game ended');
     clearTimeout(timer);
-    resetGame(); 
+    showOverlay();
 }
 
 function resetGame() {
     window.location.reload();
 }
 
+function showInfo() {
+    infoBox.classList.add('show');
+}
+
+function closeInfo() {
+    infoBox.classList.remove('show');
+}
+
+
 startButton.addEventListener('click', startGame);
 endButton.addEventListener('click', endGame);
+overlayBtn.addEventListener('click', closeOverlay);
+infoButton.addEventListener('click', showInfo)
+infoCloseBtn.addEventListener('click', closeInfo);
+
