@@ -9,6 +9,10 @@ const infoButton = document.querySelector('#infoButton');
 const infoBox = document.querySelector('.info-box');
 const infoCloseBtn = document.querySelector('#close-btn2'); 
 
+/* add sounds */
+let clickSound = new Audio('./sounds/button-124476.mp3');
+let endingSound = new Audio('./sounds/error-2-126514.mp3');
+
 let score = 0;
 let timer; 
 let pace = 1500; 
@@ -25,6 +29,12 @@ function clickCircle(i) {
     //end game if user chosen the wrong circle in the beginning
     if (i !== activeCircle) {
         return endGame()
+    }
+
+    if (clickSound.paused) {
+        clickSound.play();
+    } else {
+        clickSound.currentTime = 0;
     }
 
     //show endButton and not show startButton
@@ -81,6 +91,7 @@ function startGame() {
 
 function showOverlay() {
     overlay.classList.add('show');
+    endingSound.play();
     finalScore.textContent = score;
 }
 

@@ -14,7 +14,7 @@ body {
     color: #28231d; 
     width: 100vw;
     height: 100vh;
-    cursor: pointer;
+    cursor: default;
 }
 
 h1 {
@@ -27,19 +27,20 @@ h1 {
 .circles {
     width: 50vw;
     margin-left: 25vw;
-    background-color: hwb(0 50% 50% / 0.25);
+    background-color: #f2f2f277;
     border-radius: 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
+
 .circle {
     width: 13vw;
     height: 13vw;
     border-radius: 50%;
     font-size: 1.5rem;
-    background-color: hwb(0 50% 50% / 0.5);
+    background-color: hwb(0 50% 50% / 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,9 +50,9 @@ h1 {
 
 .circle.active {
     background-color: goldenrod;
-/*     background-image: url('https://cdn.pixabay.com/photo/2016/10/30/18/01/apple-1783882_1280.png'); */
     background-image: url('https://illustoon.com/photo/7156.png');
     background-size: contain;
+    cursor: pointer;
 }
 
 /* Info button */
@@ -60,6 +61,7 @@ h1 {
     margin-left: 25vw;
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
 #infoButton span {
@@ -94,6 +96,7 @@ h1 {
 #startButton {
     display: block;
     background-color: rgb(106, 255, 47);
+    cursor: pointer;
 }
 
 #startButton:hover {
@@ -103,6 +106,7 @@ h1 {
 #endButton {
     display: none;
     background-color: red;
+    cursor: pointer;
 }  
 
 #endButton:hover {
